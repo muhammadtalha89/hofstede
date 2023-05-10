@@ -167,3 +167,25 @@ function scrollEventListener() {
     }
   });
 }
+
+const mainHeader = document.querySelector(".main-header");
+mainHeader.classList.remove("-translate-y-full");
+mainHeader.classList.add("translate-y-0");
+
+// class Gsap {
+//   constructor() {
+//     this.mainHeader = document.querySelector(".main-header");
+//     this.events();
+//   }
+
+//   events() {
+//     this.mainHeader.addEventListener("load", () => this.headerSlideIn());
+//   }
+
+//   // Custom methods
+//   headerSlideIn() {
+//     this.mainHeader.classList.add("translate-y-full");
+//   }
+// }
+
+// const gsaps = new Gsap();
