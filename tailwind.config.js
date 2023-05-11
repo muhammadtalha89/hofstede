@@ -25,6 +25,9 @@ module.exports = {
         "gradient-dive":
           "linear-gradient(180deg, #E5E5E5 0%, #83878F 43.23%, #080E1B 93.75%)",
       },
+      screens: {
+        "2xl": "1280px",
+      },
     },
   },
   plugins: [],

@@ -85,7 +85,6 @@ a:hover {
   width: 200%;
   height: 100vh;
   display: flex;
-  gap: 224px;
   flex-wrap: nowrap;
 }
 
