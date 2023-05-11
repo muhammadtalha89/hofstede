@@ -12,6 +12,8 @@ module.exports = {
           blue: "#71BBFF",
           grayE1: "#CBD5E1",
           black: "#080E1B",
+          dolphin: "#615d83",
+          woodsmoke: "#080809",
         },
         neutral: {
           500: "#737373",

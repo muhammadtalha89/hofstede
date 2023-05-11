@@ -5,7 +5,12 @@
 body {
   font-family: "Inter";
 }
-
+a {
+  @apply transition-all;
+}
+a:hover {
+  @apply text-hm-dolphin;
+}
 #hero {
   @apply bg-cover transition-all ease-out duration-500 delay-0 text-black;
   background-image: url(../assets/images/bg-hero.png);
@@ -36,14 +41,8 @@ body {
   text-fill-color: transparent;
 }
 
-#search {
-  background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.003) -0.05%,
-      rgba(255, 255, 255, 0.003) 99.95%
-    ),
-    rgba(37, 37, 37, 0.1);
-  backdrop-filter: blur(150px);
+#menu {
+  @apply bg-hm-woodsmoke font-light transition-colors;
 }
 
 #menu .menu-list {
@@ -52,10 +51,14 @@ body {
 }
 #menu.opened {
   mix-blend-mode: normal !important;
+  @apply bg-transparent;
 }
 #menu.opened .menu-list {
   display: block;
   transition: display 1s ease-out;
+}
+#menu .menu-list a:hover {
+  @apply text-hm-dolphin;
 }
 
 #menu #menu-icon .close-icon,
