@@ -14,20 +14,22 @@
     <link href="./dist/main.css" rel="stylesheet" />
   </head>
   <body class="overflow-x-hidden">
-    <div class="fixed z-10 w-full mix-blend-difference">
-      <header
-        class="flex container w-full pt-6 mx-auto justify-between items-center main-header -translate-y-full transition-all duration-500 delay-1000"
+    <header
+      class="main-header invisible fixed left-0 right-0 z-50 py-3 bg-black bg-opacity-90"
+    >
+      <div
+        class="mix-blend-normal flex w-full justify-between items-center container mx-auto"
       >
-        <a class="flex" href="/">
+        <a class="flex mix-blend-difference" href="/">
           <svg
-            class="inline md:hidden"
+            class="inline md:hidden mix-blend-difference"
             width="35"
             height="40"
             viewBox="0 0 35 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g style="mix-blend-mode: difference">
+            <g style="" style="fill-opacity: 0.25">
               <path
                 d="M31.9153 15.4121V6.13944C31.9153 1.63518 28.4254 0 26.0775 0C23.7297 0 20.2397 1.63518 20.2397 6.13944V18.4518H14.4254V9.05869H11.3206V33.8639C11.3206 36.6795 9.0732 36.8901 8.58756 36.9035C7.92775 36.8868 5.85455 36.6159 5.85455 33.8639V24.5912C5.85455 22.4645 5.07751 20.9798 4.00909 20.0033C5.07751 19.0269 5.85455 17.5389 5.85455 15.4155V6.13944C5.85455 3.37067 7.95789 3.11319 8.60431 3.09982L8.59091 0C6.23971 0 2.74976 1.63518 2.74976 6.13944V15.4121C2.74976 18.1809 0.646411 18.4384 0 18.4518L0.00669856 20L0 21.5482C0.646411 21.5616 2.74976 21.8191 2.74976 24.5879V33.8606C2.74976 38.3648 6.23971 40 8.58756 40C10.9354 40 14.4254 38.3648 14.4254 33.8606V21.5482H20.2397V30.9413H23.3445V6.13944C23.3445 3.32386 25.5919 3.11319 26.0775 3.09982C26.7373 3.11654 28.8105 3.38739 28.8105 6.13944V15.4121C28.8105 17.5389 29.5876 19.0236 30.656 20C29.5876 20.9764 28.8105 22.4645 28.8105 24.5879V33.8606C28.8105 36.6293 26.7072 36.8868 26.0608 36.9002L26.0742 40C28.422 40 31.912 38.3648 31.912 33.8606V24.5879C31.912 21.8191 34.0153 21.5616 34.6617 21.5482L34.655 20L34.6617 18.4518C34.0153 18.4384 31.912 18.1809 31.912 15.4121H31.9153Z"
                 fill="white"
@@ -36,7 +38,7 @@
           </svg>
 
           <svg
-            class="hidden md:inline"
+            class="hidden md:inline mix-blend-difference"
             width="163"
             height="50"
             viewBox="0 0 163 50"
@@ -135,20 +137,20 @@
               <input
                 type="text"
                 id="search"
-                class="text-sm text-white rounded-lg block w-full pl-12 p-4 bg-hm-black placeholder:text-white"
+                class="text-sm text-white rounded-lg block w-full pl-12 p-4 bg-zinc-800 text-zinc-800 bg-opacity-100 placeholder:text-white"
                 placeholder="Zoeken.."
                 required
               />
             </div>
 
             <button
-              class="hidden md:inline-block font-medium border-opacity-20 bg-[#FE621D] bg-opacity-20 rounded-lg text-[#FE621D] px-10 lg:px-12 py-4 text-sm transition duration-500 ease-in-out hover:bg-[#FE621D] hover:bg-opacity-40"
+              class="hidden md:inline-block font-medium border-opacity-20 bg-hm-orange bg-opacity-20 rounded-lg text-[#FE621D] px-10 lg:px-12 py-4 text-sm transition duration-500 ease-in-out hover:bg-[#FE621D] hover:bg-opacity-40"
             >
               Contact
             </button>
             <button
               type="button"
-              class="md:hidden inline-block font-medium border-opacity-20 bg-[#FE621D] bg-opacity-20 rounded-lg text-[#FE621D] px-4 py-4 text-sm transition duration-500 ease-in-out hover:bg-[#FE621D] hover:bg-opacity-40"
+              class="md:hidden inline-block font-medium border-opacity-20 bg-hm-orange bg-opacity-20 rounded-lg text-hm-orange px-4 py-4 text-sm transition duration-500 ease-in-out hover:bg-opacity-40"
             >
               <svg
                 width="22"
@@ -215,7 +217,7 @@
               </div>
 
               <div
-                class="w-56 bg-gradient-to-t from-zinc-700 to-zinc-800 absolute p-6 rounded-lg right-0 top-0 menu-list"
+                class="w-[13.5rem] bg-gradient-to-t from-zinc-700 to-zinc-800 absolute p-6 rounded-lg right-0 top-0 menu-list"
               >
                 <div class="text-[#A3A3A3] menu-title pb-3">Menu</div>
                 <ul class="list-reset text-sm">
@@ -244,10 +246,14 @@
           /
           <a href="#" class="font-semibold text-sm underline">NL</a>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
     <div class="mx-auto">
-      <section class="pt-6 pb-32 min-h-screen text-white" id="hero">
+      <section
+        class="pt-6 pb-32 min-h-screen text-white bg-cover"
+        id="hero"
+        style="background-image: url('./assets/images/bg-hero2.png')"
+      >
         <div class="container mx-auto min-h-screen relative">
           <h3 class="text-6xl absolute bottom-28 hero-title">
             Partners voor <br />
@@ -328,7 +334,47 @@
         </div>
       </section>
       <section class="py-36 md:py-40 lg:py-48 bg-neutral-200">
-        <div class="container mx-auto flex flex-col lg:flex-row gap-10">
+        <div class="what-we-do relative">
+          <div class="foreground">
+            <div class="container mx-auto">
+              <div class="w-1/2">
+                <h6 class="uppercase mb-10">Wat we doen</h6>
+                <h3
+                  class="md:text-[50px] text-[42px] md:leading-[72px] text-black mr-16"
+                >
+                  Klanten helpen versnellen met een combinatie van gedreven
+                  onderzoek en vlijmscherp design.
+                </h3>
+                <p
+                  class="text-xl lg:text-[24px] leading-[42px] text-neutral-500 font-light my-12"
+                >
+                  We zijn een B2B communicatie- en webdesign bureau voor
+                  bedrijven die buiten de lijntjes durven te kleuren. Het zit in
+                  ons DNA om geen genoegen te nemen met 'prima', en hebben een
+                  killer-instinct voor het herkennen van potentiële groei. We
+                  helpen bedrijven groeien met tactisch webdesign, ijzersterke
+                  marketing en versterken agency's met discrete ondersteuning
+                  van werkzaamheden. We zijn jouw kompas in het digitale
+                  landschap.
+                </p>
+
+                <button
+                  class="inline-block font-medium rounded-lg border-opacity-20 bg-[#71BBFF] bg-opacity-20 text-[#71BBFF] px-6 py-3 text-sm transition duration-500 ease-in-out hover:bg-[#71BBFF] hover:bg-opacity-40"
+                >
+                  Werkwijze
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="background absolute right-0 top-1/2 -translate-y-1/2">
+            <img
+              alt="image"
+              class="block relative"
+              src="./assets/images/Codeblock.png"
+            />
+          </div>
+        </div>
+        <!-- <div class="container mx-auto flex flex-col lg:flex-row gap-10">
           <div class="w-full lg:w-1/2">
             <h6 class="uppercase mb-10">Wat we doen</h6>
             <h3
@@ -338,7 +384,7 @@
               onderzoek en vlijmscherp design.
             </h3>
             <p
-              class="text-xl lg:text-[24px] leading-[42px] text-neutral-500 font-light my-12 text-effect"
+              class="text-xl lg:text-[24px] leading-[42px] text-neutral-500 font-light my-12"
             >
               We zijn een B2B communicatie- en webdesign bureau voor bedrijven
               die buiten de lijntjes durven te kleuren. Het zit in ons DNA om
@@ -364,15 +410,13 @@
               src="./assets/images/Codeblock.png"
             />
           </div>
-        </div>
+        </div> -->
       </section>
       <section class="py-48 bg-black overflow-hidden">
         <div class="container mx-auto">
-          <h6 class="text-6xl uppercase text-white text-center">
-            Onze kracht is
-          </h6>
-          <div class="mt-40 panels-container gap-48">
-            <div class="flex flex-col lg:flex-row gap-10 panel items-center">
+          <h6 class="text-6xl text-white text-center">Onze kracht is</h6>
+          <div class="mt-32 panels-container gap-48">
+            <div class="flex flex-col lg:flex-row gap-32 panel items-center">
               <div class="w-full lg:w-1/2">
                 <h3 class="md:text-[50px] text-[42px] text-white">
                   Communicatie

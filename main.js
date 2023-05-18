@@ -5,12 +5,50 @@ $(document).ready(function () {
   });
 });
 
-setTimeout(() => {
-  document.getElementById("hero").style.backgroundImage =
-    "url('./assets/images/bg-hero2.png')";
-  document.getElementById("hero").style.color = "#fff";
-  $(".hero-title").css("-webkit-text-fill-color", "initial");
-}, 1000);
+// setTimeout(() => {
+//   document.getElementById("hero").style.backgroundImage =
+//     "url('./assets/images/bg-hero2.png')";
+//   document.getElementById("hero").style.color = "#fff";
+//   $(".hero-title").css("-webkit-text-fill-color", "initial");
+// }, 1000);
+
+// gsap.to("#hero", {
+//   css:'background-image','url(./assets/images/bg-hero2.png)'
+// });
+
+const tl = gsap.timeline();
+
+// tl.to("#hero", {
+//   duration: 2,
+//   backgroundImage: "url('./assets/images/bg-hero2.png')",
+//   autoAlpha: 1,
+// });
+tl.to("#hero", {
+  autoAlpha: 0.5,
+  duration: 0.1,
+});
+tl.to("#hero", {
+  duration: 0.7,
+  ease: "power2.in",
+  autoAlpha: 1,
+  backgroundImage: "url('./assets/images/bg-hero.png')",
+});
+tl.to(".hero-title", {
+  backgroundImage: "linear-gradient(45deg, #000 100%, #eee 200%, #000 300%)",
+  duration: 0.5,
+});
+
+gsap.fromTo(
+  ".main-header",
+  {
+    y: -1000,
+  },
+  {
+    y: 0,
+    autoAlpha: 1,
+    delay: 0.5,
+  }
+);
 
 gsap.to("#home-contact", {
   backgroundColor: "#080809",
@@ -26,20 +64,20 @@ gsap.to("#home-contact", {
 
 gsap.registerPlugin(ScrollTrigger);
 
-let sections = gsap.utils.toArray(".panels-container .panel");
-if (document.documentElement.clientWidth >= 768) {
-  gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".panels-container",
-      pin: true,
-      scrub: 1,
-      snap: 1 / (sections.length - 1),
-      end: () => "+=" + document.querySelector(".panel").offsetWidth,
-    },
-  });
-}
+// let sections = gsap.utils.toArray(".panels-container .panel");
+// if (document.documentElement.clientWidth >= 768) {
+//   gsap.to(sections, {
+//     xPercent: -100 * (sections.length - 1),
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: ".panels-container",
+//       pin: true,
+//       scrub: 1,
+//       snap: 1 / (sections.length - 1),
+//       end: () => "+=" + document.querySelector(".panel").offsetWidth,
+//     },
+//   });
+// }
 
 gsap.to("#home-contact", {
   backgroundColor: "#080809",
@@ -50,6 +88,32 @@ gsap.to("#home-contact", {
     start: "top bottom",
     end: "+=100%",
   },
+});
+
+const showAnim = gsap
+  .from(".main-header", {
+    yPercent: -100,
+    paused: true,
+    duration: 0.2,
+  })
+  .progress(1);
+
+ScrollTrigger.create({
+  start: "top top",
+  end: 99999,
+  onUpdate: (self) => {
+    self.direction === -1 ? showAnim.play() : showAnim.reverse();
+  },
+  onEnter: () =>
+    gsap.to(".main-header", {
+      backgroundColor: "#000",
+      duration: 1.4,
+      opacity: 0.9,
+    }),
+  onEnterBack: () =>
+    gsap.to(".main-header", {
+      backgroundColor: "#fff",
+    }),
 });
 
 // star effect Wait for images to load
@@ -168,9 +232,9 @@ function scrollEventListener() {
   });
 }
 
-const mainHeader = document.querySelector(".main-header");
-mainHeader.classList.remove("-translate-y-full");
-mainHeader.classList.add("translate-y-0");
+// const mainHeader = document.querySelector(".main-header");
+// mainHeader.classList.remove("-translate-y-full");
+// mainHeader.classList.add("translate-y-0");
 
 // class Gsap {
 //   constructor() {

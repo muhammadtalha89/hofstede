@@ -14,16 +14,11 @@ module.exports = {
           black: "#080E1B",
           dolphin: "#615d83",
           woodsmoke: "#080809",
+          orange: "#FE621D",
         },
         neutral: {
           500: "#737373",
         },
-      },
-      backgroundImage: {
-        "gradient-text":
-          "linear-gradient(109.97deg, #FFFFFF -32.38%, rgba(0, 0, 0, 0) 55.95%)",
-        "gradient-dive":
-          "linear-gradient(180deg, #E5E5E5 0%, #83878F 43.23%, #080E1B 93.75%)",
       },
       screens: {
         "2xl": "1280px",

@@ -4,16 +4,13 @@
 
 body {
   font-family: "Inter";
+  background-color: #000;
 }
 a {
   @apply transition-all;
 }
 a:hover {
   @apply text-hm-dolphin;
-}
-#hero {
-  @apply bg-cover transition-all ease-out duration-500 delay-0 text-black;
-  background-image: url(../assets/images/bg-hero.png);
 }
 
 .text-effect {
@@ -34,15 +31,11 @@ a:hover {
   transition: all 21s ease-in-out;
 }
 .hero-title {
-  background: linear-gradient(109.97deg, #000 -32.38%, rgba(0, 0, 0, 0) 55.95%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-black  tracking-wider leading-snug;
 }
 
 #menu {
-  @apply bg-hm-woodsmoke font-light transition-colors;
+  @apply bg-zinc-800 font-light transition-colors rounded-lg;
 }
 
 #menu .menu-list {
@@ -82,10 +75,6 @@ a:hover {
 }
 
 .panels-container {
-  width: 200%;
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 .ellipse {
